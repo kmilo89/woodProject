@@ -142,7 +142,7 @@ class BOV:
 if __name__ == '__main__':
 
     # parse cmd args
-    parser = argparse.ArgumentParser(
+    '''parser = argparse.ArgumentParser(
             description=" Bag of visual words example"
         )
     parser.add_argument('--train_path', action="store", dest="train_path", required=True)
@@ -150,14 +150,16 @@ if __name__ == '__main__':
 
     args =  vars(parser.parse_args())
     print(args)
-
+'''
     
     bov = BOV(no_clusters=100)
 
     # set training paths
-    bov.train_path = args['train_path'] 
+    #bov.train_path = args['train_path'] 
+    bov.train_path = 'Bag-of-Visual-Words-Python/images/train/' 
     # set testing paths
-    bov.test_path = args['test_path'] 
+    #bov.test_path = args['test_path'] 
+    bov.test_path = 'Bag-of-Visual-Words-Python/images/test/'
     # train the model
     bov.trainModel()
     # test model
